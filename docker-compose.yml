@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  web:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      SERVER_PORT: 3000
+    ports:
+      - 3000:3000
