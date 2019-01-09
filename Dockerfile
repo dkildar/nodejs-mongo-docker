@@ -1,6 +1,6 @@
 FROM node:8-alpine
 
-ENV PROJECT_DIR /root/backend/
+ENV PROJECT_DIR /usr/backend/
 
 ENV SERVER_PORT 8000
 EXPOSE $SERVER_PORT
@@ -14,4 +14,4 @@ RUN npm install
 
 RUN npm run build
 
-CMD node dist
+CMD npm run local-dev

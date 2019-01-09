@@ -10,7 +10,7 @@ class Router {
 
   private initRoutes() {
     this.router.get('/', (request, response) => {
-      response.json('Works')
+      response.json('Node.js + MongoDB + TypeScript works on Docker')
     })
   }
 }

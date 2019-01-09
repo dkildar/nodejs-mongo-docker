@@ -1,11 +1,35 @@
 version: '2'
 
 services:
+  mongo:
+    container_name: mongo
+    env_file:
+      - .env
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_DATABASE: ${DB_NAME}
+    ports:
+      - 27017:27017
+
   web:
-    restart: unless-stopped
     build:
       context: .
-    environment:
-      SERVER_PORT: 3000
+    container_name: web
+    restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - 3000:3000
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo
+    volumes:
+      - .:/usr/backend
+
+volumes:
+  data-volume:
