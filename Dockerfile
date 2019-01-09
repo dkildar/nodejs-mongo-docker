@@ -13,5 +13,3 @@ WORKDIR $PROJECT_DIR
 RUN npm install
 
 RUN npm run build
-
-CMD npm run local-dev

@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "prod": "docker-compose -f docker-compose.prod.yml up",
+    "local-prod": "tsc && node dist",
     "local-dev": "tsc --watch & nodemon dist",
-    "dev": "docker-compose up",
+    "dev": "docker-compose -f docker-compose.yml up",
     "test": "tsc && mocha dist/**/*.spec.js",
     "lint": "eslint app --ext ts",
     "tsc": "tsc"

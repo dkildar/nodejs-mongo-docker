@@ -3,9 +3,12 @@
 Docker + Docker Compose
 
 ### Installing
-`docker-compose up --build`
+1. Create .env file with your own variables
+`cp .env .env.template`
 
-Use `npm install` for local development, testing, linting.
+2. `docker-compose up --build`
+
+3. Use `npm install` for local development, testing, linting.
 
 ### Development
 

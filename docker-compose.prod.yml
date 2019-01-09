@@ -31,7 +31,7 @@ services:
     volumes:
       - .:/usr/backend
     command:
-      npm run local-dev
+      npm run local-prod
 
 volumes:
   data-volume:
